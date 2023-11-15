@@ -12,20 +12,18 @@
     <title>Breathe</title>
   </head>
 
-  <body>
+  <body id="body">
+    <script>
+      var palettes = ["cool", "warm"];
+      var palette = palettes[Math.floor(Math.random() * palettes.length)];
+      var el = document.getElementById("body");
+      el.style.animationName = `${palette}-interval`;
+      el.style.backgroundColor = `var(--${palette}-base)`;
+    </script>
     <div id="box">
       <div id="circle"></div>
-      <span class="instruction"></span>
+      <!-- <span class="instruction"></span> -->
+      <span class="box-progress"></span>
     </div>
-    <!-- Google Font async load -->
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
-    <script>
-      WebFont.load({
-        google: {
-          // example family
-          families: ["Inter:200,400,600"],
-        },
-      });
-    </script>
   </body>
 </html>
